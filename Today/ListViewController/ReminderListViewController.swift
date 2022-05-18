@@ -22,6 +22,8 @@ class ReminderListViewController: UICollectionViewController {
         snapshot.appendItems(Reminder.sampleData.map { $0.id })
         dataSource.apply(snapshot)
         
+        updateSnapshot()
+        
         collectionView.dataSource = dataSource
     }
     
