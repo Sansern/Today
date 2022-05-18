@@ -10,7 +10,6 @@
         <!--Reminder List View Controller-->
         <scene sceneID="cHI-bo-sBy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GRa-Fi-W0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="jNA-NR-p12" customClass="ReminderListViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ydK-J4-DIS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -29,6 +28,7 @@
                         </connections>
                     </collectionView>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRa-Fi-W0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1243" y="-591"/>
         </scene>
