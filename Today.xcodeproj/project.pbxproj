@@ -21,6 +21,7 @@
 		05BEB2B628283215004E192F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BEB2B528283215004E192F /* Assets.xcassets */; };
 		05BEB2B928283215004E192F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BEB2B728283215004E192F /* LaunchScreen.storyboard */; };
 		05BEB2DE28283953004E192F /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEB2DD28283953004E192F /* Reminder.swift */; };
+		05F8322828381A4B00FE0D13 /* ReminderViewController+Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8322728381A4B00FE0D13 /* ReminderViewController+Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		05BEB2BF28283215004E192F /* TodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BEB2C928283215004E192F /* TodayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BEB2DD28283953004E192F /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		05F8322728381A4B00FE0D13 /* ReminderViewController+Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+Section.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				05A7696228379FE500EC6876 /* ReminderViewController.swift */,
 				05A769642837A1E900EC6876 /* ReminderViewController+Row.swift */,
+				05F8322728381A4B00FE0D13 /* ReminderViewController+Section.swift */,
 			);
 			path = DetailViewController;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F8322828381A4B00FE0D13 /* ReminderViewController+Section.swift in Sources */,
 				05A460542831293900758B8E /* UIColor+Today.swift in Sources */,
 				05364B63283553EB00EA466B /* ReminderListViewController+Actions.swift in Sources */,
 				05A7696328379FE500EC6876 /* ReminderViewController.swift in Sources */,
