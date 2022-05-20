@@ -1,12 +1,6 @@
-//
-//  ReminderListViewController+DataSource.swift
-//  Today
-//
-//  Created by Sansern Wuthirat on 5/15/22.
-//
 
 import UIKit
-//
+
 extension ReminderListViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>

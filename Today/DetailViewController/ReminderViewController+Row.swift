@@ -1,10 +1,3 @@
-//
-//  ReminderViewController+Row.swift
-//  Today
-//
-//  Created by Sansern Wuthirat on 5/20/22.
-//
-
 import UIKit
 
 extension ReminderViewController {

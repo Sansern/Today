@@ -1,7 +1,6 @@
 import UIKit
 
 class ReminderListViewController: UICollectionViewController {
-   
     var dataSource: DataSource!
     var reminders: [Reminder] = Reminder.sampleData
     
@@ -17,16 +16,24 @@ class ReminderListViewController: UICollectionViewController {
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
-        var snapshot = Snapshot()
-        snapshot.appendSections([0])
-        snapshot.appendItems(Reminder.sampleData.map { $0.id })
-        dataSource.apply(snapshot)
-        
         updateSnapshot()
         
         collectionView.dataSource = dataSource
     }
     
+    
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let id = reminders[indexPath.item].id
+        showDetail(for: id)
+        return false
+    }
+    
+    func showDetail(for id: Reminder.ID) {
+        let reminder = reminder(for: id)
+        let viewController = ReminderViewController(reminder: reminder)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
         listConfiguration.showsSeparators = false
