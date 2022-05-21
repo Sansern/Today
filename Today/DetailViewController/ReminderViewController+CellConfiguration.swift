@@ -14,6 +14,12 @@ extension ReminderViewController {
                 contentConfiguration.text = title
         return contentConfiguration
         }
+    
+    func titleConfiguration(for cell: UICollectionViewListCell, with title: String?) -> TextFieldContentView.Configuration {
+            var contentConfiguration = cell.textFieldConfiguration()
+            contentConfiguration.text = title
+            return contentConfiguration
+        }
    
     func text(for row: Row) -> String? {
             switch row {
@@ -23,5 +29,5 @@ extension ReminderViewController {
             case .viewTitle: return reminder.title
             default: return nil
             }
-        }
+        }
 }

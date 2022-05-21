@@ -11,7 +11,11 @@ class TextFieldContentView: UIView, UIContentView {
     }
     
     let textField = UITextField()
-    var configuration: UIContentConfiguration
+    var configuration: UIContentConfiguration {
+            didSet {
+                configure(configuration: configuration)
+            }
+        }
     
     override var intrinsicContentSize: CGSize {
         CGSize(width: 0, height: 44)
@@ -26,5 +30,18 @@ class TextFieldContentView: UIView, UIContentView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(configuration: UIContentConfiguration) {
+        guard let configuration = configuration as? Configuration else { return }
+        textField.text = configuration.text
+        
+       }
+    
+}
+
+extension UICollectionViewListCell {
+    func textFieldConfiguration() -> TextFieldContentView.Configuration {
+        TextFieldContentView.Configuration()
     }
 }
