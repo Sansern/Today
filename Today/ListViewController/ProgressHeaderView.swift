@@ -1,13 +1,14 @@
 import UIKit
 
 class ProgressHeaderView: UICollectionReusableView {
+    static var elementKind: String { UICollectionView.elementKindSectionHeader }
     var progress: CGFloat = 0 {
-            didSet {
-                heightConstraint?.constant = progress * bounds.height
+        didSet { heightConstraint?.constant = progress * bounds.height
                 UIView.animate(withDuration: 0.2) { [weak self] in
                     self?.layoutIfNeeded()
-            }
+                }
         }
+    }
         
     private let upperView = UIView(frame: .zero)
     private let lowerView = UIView(frame: .zero)
