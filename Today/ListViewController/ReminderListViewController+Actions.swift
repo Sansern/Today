@@ -19,7 +19,7 @@ extension ReminderListViewController {
         present(navigationController, animated: true)
     }
     
-    @objc func didCancleAdd( _ sender: UIBarButtonItem) {
+    @objc func didCancelAdd( _ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
 }
