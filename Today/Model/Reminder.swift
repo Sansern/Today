@@ -1,10 +1,3 @@
-//
-//  Reminder.swift
-//  Today
-//
-//  Created by Sansern Wuthirat on 5/9/22.
-//
-
 import Foundation
 
 struct Reminder: Equatable, Identifiable {

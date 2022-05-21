@@ -1,10 +1,3 @@
-//
-//  ReminderViewController+Section.swift
-//  Today
-//
-//  Created by Sansern Wuthirat on 5/21/22.
-//
-
 import Foundation
 
 extension ReminderViewController {

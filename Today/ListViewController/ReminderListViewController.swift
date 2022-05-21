@@ -21,7 +21,6 @@ class ReminderListViewController: UICollectionViewController {
         collectionView.dataSource = dataSource
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let id = reminders[indexPath.item].id
         showDetail(for: id)
@@ -30,7 +29,10 @@ class ReminderListViewController: UICollectionViewController {
     
     func showDetail(for id: Reminder.ID) {
         let reminder = reminder(for: id)
-        let viewController = ReminderViewController(reminder: reminder)
+        let viewController = ReminderViewController(reminder: reminder) { [weak self] reminder in
+            self?.update(reminder, with: reminder.id)
+            self?.updateSnapshot(reloading: [reminder.id])
+        }
         navigationController?.pushViewController(viewController, animated: true)
     }
 

@@ -155,11 +155,11 @@
 		05BEB2AB28283213004E192F /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				05BEB2DC2828392D004E192F /* Model */,
 				05BEB2AC28283213004E192F /* AppDelegate.swift */,
 				05BEB2AE28283213004E192F /* SceneDelegate.swift */,
-				05AB1C592838FB8300CF3B32 /* ContentView */,
-				05BEB2DC2828392D004E192F /* Model */,
 				05A769662837A21800EC6876 /* DetailViewController */,
+				05AB1C592838FB8300CF3B32 /* ContentView */,
 				05A46055283129F400758B8E /* ListViewController */,
 				05BEB2B228283213004E192F /* Main.storyboard */,
 				05BEB2B528283215004E192F /* Assets.xcassets */,

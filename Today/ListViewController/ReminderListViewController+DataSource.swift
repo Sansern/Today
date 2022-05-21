@@ -1,4 +1,3 @@
-
 import UIKit
 
 extension ReminderListViewController {
@@ -65,7 +64,6 @@ extension ReminderListViewController {
         let button = ReminderDoneButton()
         button.addTarget(self, action: #selector(didPressDoneButton(_:)), for: .touchUpInside)
         button.id = reminder.id
-        
         button.setImage(image, for: .normal)
         return UICellAccessory.CustomViewConfiguration(customView: button, placement: .leading(displayed: .always))
     }

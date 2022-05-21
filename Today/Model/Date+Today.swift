@@ -1,9 +1,3 @@
-//
-//  Date+Today.swift
-//  Today
-//
-//  Created by Sansern Wuthirat on 5/15/22.
-//
 
 import Foundation
 
