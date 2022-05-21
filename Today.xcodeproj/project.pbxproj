@@ -114,8 +114,8 @@
 		05A769662837A21800EC6876 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				05AB1C572838F97200CF3B32 /* ReminderViewController+CellConfiguration.swift */,
 				05A7696228379FE500EC6876 /* ReminderViewController.swift */,
+				05AB1C572838F97200CF3B32 /* ReminderViewController+CellConfiguration.swift */,
 				05A769642837A1E900EC6876 /* ReminderViewController+Row.swift */,
 				05F8322728381A4B00FE0D13 /* ReminderViewController+Section.swift */,
 			);

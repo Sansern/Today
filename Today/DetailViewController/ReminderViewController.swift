@@ -5,10 +5,12 @@ class ReminderViewController: UICollectionViewController {
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Row>
 
     var reminder: Reminder
+    var workingReminder: Reminder
     private var dataSource: DataSource!
 
     init(reminder: Reminder) {
         self.reminder = reminder
+        self.workingReminder = reminder
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
         listConfiguration.headerMode = .firstItemInSection
@@ -69,6 +71,12 @@ class ReminderViewController: UICollectionViewController {
         cell.tintColor = .todayPrimaryTint
     }
     
+    private func prepareForEditing() {
+        if workingReminder != reminder {
+            reminder = workingReminder
+        }
+        updateSnapshotForEditing()
+    }
     
     private func updateSnapshotForViewing() {
         var snapshot = Snapshot()
