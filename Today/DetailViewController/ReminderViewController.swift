@@ -27,9 +27,20 @@ class ReminderViewController: UICollectionViewController {
         }
         
         navigationItem.title = NSLocalizedString("Reminder", comment: "Reminder view controller title")
+        navigationItem.rightBarButtonItem = editButtonItem
         
-        updateSnapshotForView()
+        updateSnapshotForViewing()
     }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        if editing {
+            updateSnapshotForEditing()
+        } else {
+            updateSnapshotForViewing()
+        }
+    }
+    
     
     private func updateSnapshotForEditing() {
         var snapshot = Snapshot()
@@ -56,7 +67,7 @@ class ReminderViewController: UICollectionViewController {
         cell.tintColor = .todayPrimaryTint
     }
     
-    private func updateSnapshotForView() {
+    private func updateSnapshotForViewing() {
         var snapshot = Snapshot()
         snapshot.appendSections([.view])
                 snapshot.appendItems([.viewTitle, .viewDate, .viewTime, .viewNotes], toSection: .view)
@@ -77,6 +88,7 @@ class ReminderViewController: UICollectionViewController {
         case .viewNotes: return reminder.notes
         case .viewTime: return reminder.dueDate.formatted(date: .omitted, time: .shortened)
         case .viewTitle: return reminder.title
+        default: return nil
         }
     }
 }
