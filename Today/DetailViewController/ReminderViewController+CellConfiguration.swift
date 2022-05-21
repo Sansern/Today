@@ -29,5 +29,5 @@ extension ReminderViewController {
             case .viewTitle: return reminder.title
             default: return nil
             }
-        }
+    } 
 }
