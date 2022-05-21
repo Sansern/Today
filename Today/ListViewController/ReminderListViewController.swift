@@ -11,6 +11,15 @@ class ReminderListViewController: UICollectionViewController {
             ReminderListStyle.today.name, ReminderListStyle.future.name, ReminderListStyle.all.name
         ])
     var headerView: ProgressHeaderView?
+    var progress: CGFloat {
+        let chunkSize = 1.0 / CGFloat(filteredReminders.count)
+        let progress = filteredReminders.reduce(0.0) {
+           let chunk = $1.isComplete ? chunkSize : 0
+           return $0 + chunk
+       }
+        return progress
+   }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +58,14 @@ class ReminderListViewController: UICollectionViewController {
         showDetail(for: id)
         return false
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        
+        guard elementKind == ProgressHeaderView.elementKind, let progressView = view as? ProgressHeaderView else {
+                    return
+                }
+        progressView.progress = progress
+       }
     
     func showDetail(for id: Reminder.ID) {
         let reminder = reminder(for: id)

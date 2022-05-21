@@ -3,10 +3,12 @@ import UIKit
 class ProgressHeaderView: UICollectionReusableView {
     static var elementKind: String { UICollectionView.elementKindSectionHeader }
     var progress: CGFloat = 0 {
-        didSet { heightConstraint?.constant = progress * bounds.height
-                UIView.animate(withDuration: 0.2) { [weak self] in
-                    self?.layoutIfNeeded()
-                }
+        didSet {
+            setNeedsLayout()
+            heightConstraint?.constant = progress * bounds.height
+            UIView.animate(withDuration: 0.2) { [weak self] in
+                self?.layoutIfNeeded()
+            }
         }
     }
         
@@ -14,10 +16,15 @@ class ProgressHeaderView: UICollectionReusableView {
     private let lowerView = UIView(frame: .zero)
     private let containerView = UIView(frame: .zero)
     private var heightConstraint: NSLayoutConstraint?
+    private var valueFormat: String { NSLocalizedString("%d percent", comment: "progress percentage value format") }
+       
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         prepareSubviews()
+        isAccessibilityElement = true
+        accessibilityLabel = NSLocalizedString("Progress", comment: "Progress view accessibility label")
+        accessibilityTraits.update(with: .updatesFrequently)
     }
     
     required init?(coder: NSCoder) {
@@ -26,6 +33,8 @@ class ProgressHeaderView: UICollectionReusableView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        accessibilityValue = String(format: valueFormat, Int(progress * 100.0))
+        heightConstraint?.constant = progress * bounds.height
         containerView.layer.masksToBounds = true
         containerView.layer.cornerRadius = 0.5 * containerView.bounds.width
     }
