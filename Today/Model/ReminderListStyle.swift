@@ -22,7 +22,7 @@ enum ReminderListStyle: Int {
         case .today:
             return isInToday
         case .future:
-            return (date > Date.now) && isInToday
+            return (date > Date.now) && !isInToday
         case .all:
             return true
         }
