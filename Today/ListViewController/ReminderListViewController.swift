@@ -73,6 +73,7 @@ class ReminderListViewController: UICollectionViewController {
                 }
         progressView.progress = progress
        }
+    
     func refreshBackground() {
         collectionView.backgroundView = nil
         let backgroundView = UIView()
